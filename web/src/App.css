@@ -1,0 +1,94 @@
+@import '~antd/dist/antd.css';
+html,
+body {
+    overflow: hidden;
+}
+
+a {
+    color: inherit !important
+}
+
+.App {
+    width: 100vw;
+    height: 100vh;
+}
+
+.App .header {
+    height: 60px;
+    margin-bottom: 1px;
+    background-color: #fff;
+    z-index: 10;
+    line-height: 60px;
+    /* text-align: right; */
+    box-shadow: 1px 1px 6px #999;
+}
+
+.App .header a {
+    color: #1890ff !important;
+}
+
+.App .header button {
+    margin-right: 24px;
+}
+
+.App iframe {
+    border: none;
+    width: 100%;
+    height: calc(100% - 4px);
+}
+
+.side-ctrl {
+    position: absolute;
+    left: 0;
+    top: 24px;
+    display: inline-table;
+    width: 60px;
+    height: 60px;
+    background-color: rgba(255, 255, 255, .6);
+    border-radius: 4px;
+    cursor: pointer;
+    box-shadow: 0 0 6px #999;
+    transition: all .3s;
+}
+
+.side-ctrl:hover {
+    transform: scale(1.02);
+}
+
+.side-ctrl:active {
+    transform: scale(0.95);
+}
+
+.prefix-icon .ant-select-arrow {
+    left: 11px !important;
+    right: initial !important;
+}
+
+.prefix-icon .ant-select-selection__rendered {
+    margin-left: 30px;
+}
+
+.manage-wrapper .rdw-editor-toolbar .rdw-inline-wrapper {
+    display: inline-block;
+}
+
+.manage-wrapper .rdw-editor-toolbar .rdw-inline-wrapper .rdw-option-wrapper {
+    display: inline-block;
+}
+
+.ant-menu-item:hover{
+    background-color: #e6f7ff;
+}
+.ant-menu-item:hover .project-remove{
+    display: inline-block;
+}
+.ant-menu-item .project-remove{
+    transition: all .3s;
+    display: none;
+}
+.ant-menu-item .project-remove:hover{
+    transform: scale(1.2)
+}
+.ant-menu-item .project-remove:active{
+    transform: scale(0.9)
+}

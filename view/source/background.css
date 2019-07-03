@@ -1,0 +1,28 @@
+body {
+    overflow: hidden;
+    background-color: #efefef;
+}
+#document-container{
+    width: 100vw;
+    height: 100vh;
+    z-index: 10;
+    position: absolute;
+    left: 0;
+    top: 0;
+    overflow: auto;
+
+}
+#document-content {
+    padding: 24px;
+    width: 848px;
+    margin: 0 auto;
+    overflow: auto;
+    background: rgba(255, 255, 255, .6);
+    min-height: calc(100% - 56px);
+    z-index: 10;
+    box-shadow: 0 0 14px #ddd;
+}
+
+#cas {
+    opacity: 0.15;
+}
