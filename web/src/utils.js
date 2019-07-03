@@ -50,18 +50,7 @@ export default class Config extends CONSTANT {
 					options.sessionError();
 				}
 			} else {
-				if (that.onerror) {
-					return;
-				}
-				that.onerror = true;
-				that.error({
-					title: '错误',
-					content: result.msg,
-					okText: "知道了",
-					onOk: function () {
-						that.onerror = false;
-					}
-				})
+				alert(result.msg)
 			}
 		}).catch(function (ex) {
 			console.error(ex);
@@ -72,18 +61,7 @@ export default class Config extends CONSTANT {
 				//异常回调
 				options.onError(ex);
 			} else {
-				if (that.onerror) {
-					return;
-				}
-				that.onerror = true;
-				that.error({
-					title: '错误',
-					content: '系统异常！',
-					okText: "知道了",
-					onOk: function () {
-						that.onerror = false;
-					}
-				})
+				alert('system error')
 			}
 		})
 	}

@@ -4,7 +4,7 @@ var SQLite3 = require('sqlite3').verbose();
 class HandleDB {
 
     constructor(options) {
-        this.databaseFile = options && options.databaseFile || `./data`;    // 数据库文件(文件路径+文件名)
+        this.databaseFile = options && options.databaseFile || `./data.db`;    // 数据库文件(文件路径+文件名)
         this.tableName = options && options.tableName || `main`;   // 表名
 
         this.db = null;    // 打开的数据库对象

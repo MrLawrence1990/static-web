@@ -376,7 +376,7 @@ export default class extends React.Component {
         >
           <Form onSubmit={this.handleSubmit} className="login-form">
             <FormItem>
-              <Input id="share-link" value={this.state.src} prefix={<Icon type="link" style={{ color: 'rgba(0,0,0,.25)' }} />} placeholder="share" />
+              <Input id="share-link" value={window.location.origin+this.state.src} prefix={<Icon type="link" style={{ color: 'rgba(0,0,0,.25)' }} />} placeholder="share" />
             </FormItem>
           </Form>
         </Modal>

@@ -1,7 +1,10 @@
+
+var mainProcess = require('process')
 var process = require('child_process');
 var fs = require('fs')
 var path = require('path')
 var adm_zip = require('adm-zip')
+var iconvLite = require('iconv-lite')
 
 var frontPath = path.resolve('./web')
 
@@ -65,19 +68,27 @@ var build = function () {
 
 var run = function () {
   console.log('-------------------running server----------------------')
-  let workerProcess = process.exec('node ./bin/www', function (error, stdout, stderr) {
-    if (error !== null) {
-      logError(error)
-    }
-  });
+  let workerProcess = process.spawn('node', ['./bin/www']);
   workerProcess.stdout.on('data', function (data) {
-    console.log(data);
+    console.log(iconvLite.decode(data,'utf-8'));
   });
   workerProcess.stderr.on('data', function (data) {
     logError(data)
   });
+  open('http://localhost:3100')
 }
 
 var logError = function (info) {
   console.log('\x1B[31m%s\x1B[0m', info)
+}
+
+var open = function (url) {
+  switch (mainProcess.platform) {
+    case "darwin":
+      process.exec(`open ${url}`);
+    case "win32":
+      process.exec(`start ${url}`);
+    default:
+      process.exec(`open ${url}`);
+  }
 }
