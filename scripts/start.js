@@ -7,8 +7,8 @@ var frontPath = path.resolve('./web')
 
 fs.readdir(frontPath, function (err, files) {
   if (err) {
-    console.log(err)
-    console.log('\x1B[31m%s\x1B[0m', 'the file may be deleted, please update this project to lastest version from github')
+    logError(err)
+    logError('the file may be deleted, please update this project to lastest version from github')
     return
   }
   if (files.indexOf('node_modules') == -1) {
